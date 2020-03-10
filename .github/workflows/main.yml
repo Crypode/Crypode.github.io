@@ -14,12 +14,13 @@ jobs:
         rm -rf ./.git ./github
         cd ..
         git clone https://github.com/Itsmecomeon/Itsmecomeon.git
-        pwd
-        ls -la
-        mv ./content/* ./Itsmecomeon
-        pwd
-        ls -la
         cd ./Itsmecomeon
+        ls -la
+        git status
+        cd ..
+        mv ./content/* ./Itsmecomeon
+        cd ./Itsmecomeon
+        git status
         pwd
         ls -la
     - name: Commit files
