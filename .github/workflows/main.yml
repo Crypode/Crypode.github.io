@@ -12,6 +12,7 @@ jobs:
     - name: Update content
       run: |
         rm -rf ./.git ./github
+        cd ..
         git clone https://github.com/Itsmecomeon/Itsmecomeon.git
         pwd
         ls -la
