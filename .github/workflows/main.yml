@@ -1,0 +1,32 @@
+name: update
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Delete .git
+      run: |
+        rm -rf ./.git ./github
+        cd ..
+    - uses: actions/checkout@master
+      with:
+        repository: Itsmecomeon/Itsmecomeon
+    - name: Update content
+      run: |
+        cd ..
+        mv ./content/* ./Itsmecomeon
+        cd ./Itsmecomeon
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
