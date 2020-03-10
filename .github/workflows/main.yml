@@ -19,7 +19,7 @@ jobs:
         ls -la
     - uses: actions/checkout@master
       with:
-        repository: Itsmecomeon/Itsmecomeon
+        repository: 'Itsmecomeon/Itsmecomeon'
     - name: Update content
       run: |
         pwd
