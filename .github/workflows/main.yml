@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         repository: Itsmecomeon/Itsmecomeon
-        path: Itsmecomeon
+        path: ../Itsmecomeon
         persist-credentials: false
         fetch-depth: 0
         
