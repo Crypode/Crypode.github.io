@@ -11,17 +11,16 @@ jobs:
     - uses: actions/checkout@master
     - name: Update content
       run: |
-        pwd
-        ls -la
         rm -rf ./.git ./github
-        cd ..
+        git clone https://github.com/Itsmecomeon/Itsmecomeon.git
         pwd
         ls -la
-        git clone https://github.com/Itsmecomeon/Itsmecomeon.git
         mv ./content/* ./Itsmecomeon
         pwd
         ls -la
         cd ./Itsmecomeon
+        pwd
+        ls -la
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
