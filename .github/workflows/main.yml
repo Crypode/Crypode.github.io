@@ -22,7 +22,8 @@ jobs:
         
     - name: Update content
       run: |
-        mv !(.git|.github|Itsmecomeon) Itsmecomeon
+        shopt -s extglob
+        mv !(.git|.github|Itsmecomeon|.|..) Itsmecomeon
         cd Itsmecomeon
         git status
         pwd
