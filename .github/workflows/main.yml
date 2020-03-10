@@ -9,22 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Delete .git
+    - name: Update content
       run: |
         pwd
         ls -la
         rm -rf ./.git ./github
         cd ..
-        pwd
-        ls -la
-    - uses: actions/checkout@master
-      with:
-        repository: 'Itsmecomeon/Itsmecomeon'
-    - name: Update content
-      run: |
-        pwd
-        ls -la
-        cd ..
+        git clone https://github.com/Itsmecomeon/Itsmecomeon.git
         mv ./content/* ./Itsmecomeon
         pwd
         ls -la
