@@ -36,3 +36,4 @@ jobs:
       with:
         github_token: '62aac7866ea754e5eb7ac5fda55d91b28f29c48d'
         repository: Itsmecomeon/itsmecomeon
+        force: true
