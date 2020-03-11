@@ -15,24 +15,25 @@ jobs:
         
     - uses: actions/checkout@v2
       with:
-        repository: Itsmecomeon/Itsmecomeon
-        path: Itsmecomeon
+        repository: Itsmecomeon/itsmecomeon
+        path: itsmecomeon
         persist-credentials: false
         fetch-depth: 0
         
     - name: Update content
       run: |
         shopt -s extglob
-        mv !(.git|.github|Itsmecomeon|.|..) Itsmecomeon
-        cd Itsmecomeon
+        mv !(.git|.github|itsmecomeon|.|..) itsmecomeon
+        cd itsmecomeon
         git status
         pwd
         ls -la
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "Itsmecomeon@github.com"
+        git config --local user.name "Itsmecomeon"
         git commit -m "Add changes" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_PSA }}
-        repository: Itsmecomeon/Itsmecomeon
+        github_token: ${{ secrets.ADMIN }}
+        repository: Itsmecomeon/itsmecomeon
+        force: true
