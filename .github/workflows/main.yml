@@ -13,25 +13,9 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
         
-    - uses: actions/checkout@v2
-      with:
-        repository: Itsmecomeon/itsmecomeon
-        path: itsmecomeon
-        persist-credentials: false
-        fetch-depth: 0
-        
     - name: Update content
       run: |
-        shopt -s extglob
-        ls -la
         rm -rf ./.github
-        mv !(.git|.github|itsmecomeon|.|..) itsmecomeon
-        cd itsmecomeon
-        ls -la
-        rm -rf ./.github
-        git status
-        pwd
-        ls -la
         git config --local user.email "Itsmecomeon@github.com"
         git config --local user.name "Itsmecomeon"
         git add .
