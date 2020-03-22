@@ -24,6 +24,7 @@ jobs:
       run: |
         shopt -s extglob
         ls -la
+        rm -rf ./.github
         mv !(.git|.github|itsmecomeon|.|..) itsmecomeon
         cd itsmecomeon
         ls -la
