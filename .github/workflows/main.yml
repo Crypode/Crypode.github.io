@@ -35,6 +35,6 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: '62aac7866ea754e5eb7ac5fda55d91b28f29c48d'
+        github_token: ${{ secrets.ADMIN }}
         repository: Itsmecomeon/itsmecomeon
         force: true
