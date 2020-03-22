@@ -23,8 +23,11 @@ jobs:
     - name: Update content
       run: |
         shopt -s extglob
+        ls -la
         mv !(.git|.github|itsmecomeon|.|..) itsmecomeon
         cd itsmecomeon
+        ls -la
+        rm -rf ./.github
         git status
         pwd
         ls -la
